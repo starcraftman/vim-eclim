@@ -10,7 +10,7 @@ function! s:DeployEclimd(eclipsePath)
         return
     endif
 
-    let l:cmd_fmt = "silent !git clone https://github.com/ervandew/eclim.git %s && "
+    let l:cmd_fmt = "silent !git clone https://github.com/ervandew/eclim.git %s -b 2.4.0 && "
                 \ . "cd %s && ant -Dvim.files=%s -Declipse.home=%s && "
                 \ . "cd - && rm -rf %s"
     let l:cmd = printf(l:cmd_fmt, l:eclim_d, l:eclim_d, l:vim_d, l:eclipse_d, l:eclim_d)
