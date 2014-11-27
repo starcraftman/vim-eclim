@@ -1,15 +1,22 @@
 vim-eclim
----------
-Made this to simply prevent the need to have `.vim/eclim` and `.vim/eclim.vim` in
-the vim directory.
+=========
+This repository simplifies the install procedure to use eclim. Notably, it allows you to
+use a plugin manager and then a simple Vim command to install it. Everything nice and tidy.
 
-As long as eclimd is running, this should install all you need with any plugin manager.
+Step 1: Vim Plugin
+------------------
+Add the following snippet to your `.vimrc`.
 
-Example:
 ```
 Plugin/NeoBundle/Plug 'starcraftman/vim-eclim'
 ```
 
-Then install using whatever command, for Vundle: `:PluginInstall`
+Then install using the appropriate plugin  command, for Vundle: `:PluginInstall`
+
+
+Step 2: Eclimd
+--------------
+If you need to install eclimd, this repo provides the command `DeployEclimd` that takes one
+required argument, the directory of your eclipse instance. 
 
 No Warranty.
