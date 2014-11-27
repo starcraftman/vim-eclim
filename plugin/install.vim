@@ -10,11 +10,11 @@ function! s:deploy_eclimd(eclipsePath)
         return
     endif
 
-    execute 'silent !git clone https://github.com/ervandew/eclim.git ' . l:eclim_d,
-    cd l:eclim_d,
+    execute 'silent !git clone https://github.com/ervandew/eclim.git ' . l:eclim_d
+    cd l:eclim_d
     let l:last_tag = split(system('git tag'), '\n')[-1]
     execute 'silent !git checkout ' . l:last_tag
     execute 'silent !ant -Dvim.files=' . l:vim_d '-Declipse.home=' . l:eclipse_d
-    cd '-'
-    execute 'rm -rf ' . l:eclim_d
+    cd -
+    "execute 'rm -rf ' . l:eclim_d
 endfunction
