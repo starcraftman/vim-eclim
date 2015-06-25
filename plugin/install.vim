@@ -5,6 +5,11 @@ function! s:deploy_eclimd(eclipsePath)
   let l:eclipse_d = resolve(getcwd() . '/' . a:eclipsePath)
   let l:vim_d = '/tmp/vim-eclim'
 
+  if ! executable('git')
+    echom 'Please install git first.'
+    return
+  endif
+
   if ! filereadable(l:eclipse_d . '/eclipse.ini')
     echom 'Eclipse path invalid.'
     return
