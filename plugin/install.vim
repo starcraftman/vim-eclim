@@ -10,7 +10,8 @@ function! s:deploy_eclimd(eclipsePath)
     return
   endif
 
-  if ! filereadable(l:eclipse_d . '/eclipse.ini')
+  if ! filereadable(l:eclipse_d . '/eclipse.ini') &&
+        \ ! filereadable(expand(a:eclipsePath) . '/eclipse.ini')
     echom 'Eclipse path invalid.'
     return
   endif
