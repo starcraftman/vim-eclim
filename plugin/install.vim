@@ -5,8 +5,8 @@ function! s:deploy_eclimd(eclipsePath)
   let l:eclipse_d = resolve(getcwd() . '/' . a:eclipsePath)
   let l:vim_d = '/tmp/vim-eclim'
 
-  if ! executable('git')
-    echom 'Please install git first.'
+  if ! executable('git') || ! executable('ant')
+    echom 'Please make sure you have git and ant installed.'
     return
   endif
 
