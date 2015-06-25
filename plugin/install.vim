@@ -13,6 +13,7 @@ function! s:deploy_eclimd(eclipsePath)
   if ! filereadable(l:eclipse_d . '/eclipse.ini') &&
         \ ! filereadable(expand(a:eclipsePath) . '/eclipse.ini')
     echom 'Eclipse path invalid.'
+    echom 'Please specify the directory that contains eclipse.ini.'
     return
   endif
 
